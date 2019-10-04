@@ -73,7 +73,7 @@
 			</tr>
 			<tr><td colspan="3" style="text-align: center;">&nbsp;</td></tr>
 			<tr>
-				<td colspan="3" style="text-align: center;user-select: none;"><span id="btn" onclick="Conf();">입금 완료</span></td>
+				<td colspan="3" style="text-align: center;user-select: none;" id="finish"><span id="btn" onclick="Conf();">입금 완료</span></td>
 			</tr>
 		</table>
 	</div>
@@ -105,7 +105,7 @@
 					if(diffHour==0 && diffMin<35){
 						//페이지 이용 불가표시
 		            	console.log("지원 가능시간이 아닙니다.");
-		            	document.getElementById("main").innerHTML="<h2>은행점검시간 등의 이유로 이용 가능시간이 아닙니다.</h2><h2>매일 23:30 ~ 00:05 에는 이용하실 수 없습니다.</h2>";
+		            	DGEID("main").innerHTML="<h2>은행점검시간 등의 이유로 이용 가능시간이 아닙니다.</h2><h2>매일 23:30 ~ 00:05 에는 이용하실 수 없습니다.</h2>";
 					}
 		        }
 		    }
@@ -114,6 +114,7 @@
 		function Conf(){
 			if(confirm('입금을 하셨나요?\n\n아직 입금전 이면 취소를 눌러주세요.')){
 				//xhr과 확인작업,처리중임을 안내
+				DGEID("finish").innerHTML="<h3>서버와 통신중입니다.</h3>";
 				var xhr3 = new XMLHttpRequest();
 				var params = "b=kb"+"&name="+DGEID('Sname').value+"&id="+DGEID('gid').value+"&grade=ce";
 			    xhr3.open("POST" , "https://leddown.iptime.org/bank/index.php" , true);
@@ -126,17 +127,20 @@
 			            	document.location.href="./invite.html";
 			            }else if(xhr3.responseText=='0'){
 			            	alert("결제에 실패하였습니다.");
+			            	document.location.href="./index.html";
 			            }else if(xhr3.responseText=='3'){
 			            	alert("결제에 실패하였습니다.\n\n결제금액이 다르거나 입금자명이 다릅니다.");
+			            	document.location.href="./index.html";
 			            }else if(xhr3.responseText=='4'){
 			            	alert("오늘 시도수가 많습니다. 관리자에게 문의주세요.");
+			            	document.location.href="./index.html";
 			            }else{
+			            	alert("알수없는 응답 신호. 관리자에게 문의주세요.");
+			            	document.location.href="./index.html";
 			            }
 			        }
 			    }
-			    
 			    xhr3.send(params);
-				//성공 실패여부 안내
 			}
 		}
 		function DGEID(arg) {
