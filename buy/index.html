@@ -111,27 +111,6 @@
 		    }
 		    xhr.send();
 		})();
-		/*
-		var xhr = new XMLHttpRequest();
-	    xhr.open("POST" , "https://leddown.iptime.org/idcheck2.php" , true);
-	    xhr.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
-	    xhr.onreadystatechange = function() {
-	        if(xhr.readyState == 4 && xhr.status == 200)
-	        {
-	            if(xhr.responseText=='1'){
-	            	DGEID('step2').style='background-color: #20b9ff; color: #fff;';
-					DGEID('step2t').style.display='';
-					DGEID('step2tb').style.display='';
-					DGEID('step2tb2').style.display='';
-	            }else{
-	            	alert("아이디가 없거나, 아직 이용기한이 남아있습니다.\n기간 연장은 같은기능인 경우만 가능합니다.");
-	            	NBBTN(1);
-	            }
-	        }
-	    }
-	    var params = "id=haha&grade=9";
-	    xhr.send(params);
-	    */
 		function Conf(){
 			if(confirm('입금을 하셨나요?\n\n아직 입금전 이면 취소를 눌러주세요.')){
 				//xhr과 확인작업,처리중임을 안내
@@ -148,7 +127,9 @@
 			            }else if(xhr3.responseText=='0'){
 			            	alert("결제에 실패하였습니다.");
 			            }else if(xhr3.responseText=='3'){
+			            	alert("결제에 실패하였습니다.\n\n결제금액이 다르거나 입금자명이 다릅니다.");
 			            }else if(xhr3.responseText=='4'){
+			            	alert("오늘 시도수가 많습니다. 관리자에게 문의주세요.");
 			            }else{
 			            }
 			        }
