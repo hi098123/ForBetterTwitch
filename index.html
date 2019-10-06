@@ -6,50 +6,81 @@
 	<style>
 		html{background-color: #26262b;color: #fff;}
 		a{text-decoration: none;color: #03a9f4}
+		#kt{background-color: #303042;padding: 10px 5px;}
+		#kt >h4 {margin: 10px}
+		#kt >h5 {margin: 10px}
+		li{padding: 5px 0;}
+		#Gotop{
+			position: fixed;
+		    left: 90%;
+		    font-size: 3em;
+		    background-color: #565967;
+		    width: 64px;
+		    height: 64px;
+		    text-align: center;
+		    cursor: pointer;
+		    top: 85%;
+		}
 	</style>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 </head>
 <body>
+	<div id="Gotop"><a href="#" class="xi-arrow-up"></a></div>
 	<div style="text-align: center;">
 		<h2><i class="xi-twich" style="color: #9370db;font-size: 1.2em;"></i> Twitch Server Checker</h2>
 		<h4>설치가 완료되었습니다. 이 서비스는 트위치 공식 서비스가 아닙니다.</h4>
 	</div>
-	<div style="margin: auto;max-width: 550px;margin-top: 50px;">
+	<div style="margin: auto;max-width: 900px;margin-top: 50px;">
 		<h1>목차</h1>
 		<ul>
-			<li>기능</li>
-			<li>작동</li>
-			<li>구입</li>
-			<li>문의</li>
+			<li><a href="#기능">기능</a></li>
+			<li><a href="#작동">작동</a></li>
+			<li><a href="#구입">구입</a></li>
+			<li><a href="#문의">문의</a></li>
 		</ul>
 		<hr style="margin-top: 50px;">
 		<div style="margin-top: 50px;">
-			<h1>기능</h1>
+			<h1 id="기능">기능</h1>
 			<p><del>1. 한글에서만 "생방송" 표기가 세로로 되던 문제를 해결해줍니다.<del></p>
-			<p>공식적으로 수정 반영되어 기능에서 제거</p>
 			<img src="live.png">
+			<p>공식적으로 수정 반영되어 기능에서 제거</p>
 		</div>
 		<div style="margin-top: 50px;">
+			<img src="ko-kr.png">
 			<p>2. 서버 위치를 확인해줍니다.</p>
 			<p>3. 광고차단 (βeta,Pro 버전) : 모든 광고를 제거하지는 못합니다.</p>
-			<p>4. <b>KT 버퍼 해결(Pro 버전)</b> : 서버를 자동으로 한국서버로 잡아줍니다.</p>
-			<img src="ko-kr.png">
+			<div id="kt">
+				<h3>4. <b>KT 버퍼 해결(Pro 버전)</b> : 서버를 자동으로 한국서버로 잡아줍니다.</h3><br>
+				<h4>Q. VPN으로도 한국서버 설정이 가능한데 차이가 뭔가요?</h4>
+				<h5>A. VPN은 VPN서버의 속도에 영향을 받습니다.</h5>
+				<h5>트위치서버 <-> VPN서버 <-> 사용자</h5><br>
+				<h5>그러나 이 프로그램은 사용자의 환경에서 트위치 서버와 직접적으로 연결을 해주기 때문에 기존 스트리밍과 동일하게 처리됩니다.</h5>
+				<h5>트위치서버 <-> 사용자 ( 지연시간의 감소 )</h5>
+				<br><br>
+				<h4>Q. 다른통신사도 이용이 가능한가요?</h4>
+				<h5>A. 현재는 <a href="https://chrome.google.com/webstore/detail/twitch-server-checker/bohhpcaljnggabklkeanncbebknjpcod?utm_source=chrome-ntp-icon&amp;authuser=1" target="_blank">무료프로그램</a>에서 위치가 Slow Server 로 뜨는경우에만 이용가능합니다.</h5>
+				<img src="./buy/slowserver.png">
+				<h5>위와 같이 아이콘이 빨간색으로 변하고, Slow Server로 뜨는 경우 이 기능을 이용하실수 있습니다.</h5>
+				<br><br>
+				<h4>Q. 왜 유료인가요?</h4>
+				<h5>A. 유지관리(업데이트,서버,운영)와 문의를 받으려면 비용이 듭니다.</h5>
+				<h5>효율적이고 안정적인 유지관리를 위해 일회성으로 사용료를 받습니다.</h5>
+			</div>
 		</div>
 	</div>
 
-	<div style="margin: auto;max-width: 550px;">
+	<div style="margin: auto;max-width: 900px;">
 		<div style="margin-top: 50px;">
-			<h1>작동</h1>
+			<h1 id="작동">작동</h1>
 			<p><i class="xi-toggle-off" style="font-size: 2.5em;color: mediumpurple;margin-left: 10px;"></i> : 꺼진 상태입니다.</p>
 			<p><i class="xi-toggle-on" style="font-size: 2.5em;color: mediumpurple;margin-left: 10px;"></i> : 켜진 상태입니다.</p>
 		</div>
 		<div style="margin: 50px auto;">
-			<h1>구입</h1>
+			<h1 id="구입">구입</h1>
 			<p><a href="/TwitchServerChecker/buy/">구입하기</a></p>
 		</div>
 		<div style="margin: 50px auto;">
-			<h1>문의</h1>
-			<p>구매 관련 문의만 받습니다.. 죄송합니다.</p>
+			<h1 id="문의">문의</h1>
 			<p><a href="https://open.kakao.com/o/sgCogcGb">고객센터 (카카오 오픈채팅)</a></p>
 		</div>
 	</div>
