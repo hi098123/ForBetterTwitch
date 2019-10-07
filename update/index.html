@@ -6,10 +6,8 @@
 	<style>
 		html{background-color: #26262b;color: #fff;}
 		a{text-decoration: none;color: #03a9f4}
-		#kt{background-color: #303042;padding: 10px 5px;}
-		#kt >h4 {margin: 10px}
-		#kt >h5 {margin: 10px}
-		li{padding: 5px 0;}
+		h1{margin-bottom: 0;}
+		h3{margin: 0}
 		#Gotop{
 			position: fixed;
 		    left: 100%;
@@ -31,13 +29,13 @@
 		<h2><i class="xi-twich" style="color: #9370db;font-size: 1.2em;"></i> Twitch Server Checker</h2>
 		<h4>업데이트 내역 안내</h4>
 	</div>
-	<div style="margin: auto;max-width: 820px;margin-top: 50px;padding: 10px;">
+	<div style="margin: auto;max-width: 820px;margin-top: 50px;padding: 10px;" id="uplist">
 		<h1>0.0.2</h1>
 		<h3>Slow Server인 경우에만 Pro구입하기 표시, Slow Server인데 한국섭으로 표기 수정</h3><br>
 		<h1>0.0.1</h1>
 		<h3>빌드</h3>
-		<div id="Gotop"><a href="#" class="xi-arrow-up"></a></div>
 	</div>
+		<div id="Gotop"><a href="#" class="xi-arrow-up"></a></div>
 	<script>
 		var text="";
 		var textarr;
@@ -46,8 +44,11 @@
 		xhr.onreadystatechange = function() {
 	        if(xhr.readyState == 4 && xhr.status == 200)
 	        {
-	        	text=xhr.responseText;
-	        	textarr=text.split("\n");
+	        	textarr=xhr.responseText.split("\n");
+	        	for (var i = textarr.length; i > 0 ; i-=3) {
+	        		text+="<h1>"+textarr[i-3]+"</h1><h3>"+textarr[i-2]+"</h3><h4>"+textarr[i-1]+"</h4><br>"
+	        	}
+	        	document.getElementById("uplist").innerHTML=text;
 	        }
 		}
 		xhr.send();
