@@ -23,6 +23,22 @@
 		    margin-top: -100px;
 		    margin-left: -100px;
 		}
+.token.keyword {
+    color: #66d9ef;
+}.token.punctuation {
+    color: #f8f8f2;
+}.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+    color: #a6e22e;
+}.token.boolean, .token.number {
+    color: #ae81ff;
+}.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string, .token.variable {
+    color: #ef2424;
+}pre[class*="language-"] {
+    padding: 1em;
+    margin: .5em 0;
+    overflow: auto;
+    border-radius: 0.3em;
+}
 	</style>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 </head>
@@ -43,11 +59,17 @@
 		<hr style="margin-top: 50px;">
 		<div style="margin-top: 50px;">
 			<h1 id="기능">기능</h1>
-			<p><del>1. 한글에서만 "생방송" 표기가 세로로 되던 문제를 해결해줍니다.</del></p>
+			<p>1. <del>한글에서만 "생방송" 표기가 세로로 되던 문제를 해결해줍니다.</del></p>
 			<img src="live.png">
 			<p><del>공식적으로 수정 반영되어 기능에서 제거</del></p>
-			<p>제거했던 기능이나, 트위치가 또 오류를 내서 스트리머명 세로표기-> 가로표기 기능추가.</p>
+			<p><b>0.0.3 (2019/10/07)</b> 제거했던 기능이나, 트위치가 또 오류를 내서 스트리머명 세로표기-> 가로표기 기능추가.</p>
 			<p>크롬 웹스토어 승인 대기중 ( 2 ~ 3일 소요 )</p>
+			<div class="code-toolbar">
+				<pre id="code_1570091322314" class="javascript language-javascript" data-ke-language="javascript" data-ke-type="codeblock"><code class=" language-javascript"><span class="token keyword">if</span><span class="token punctuation">(</span>document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'tw-font-size-5 tw-nowrap'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>offsetHeight <span class="token operator">&gt;</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'tw-font-size-5 tw-nowrap'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>offsetWidth<span class="token punctuation">)</span><span class="token punctuation">{</span>
+	document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'tw-font-size-5 tw-nowrap'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>style<span class="token punctuation">.</span>width <span class="token operator">=</span> document<span class="token punctuation">.</span><span class="token function">getElementsByClassName</span><span class="token punctuation">(</span><span class="token string">'tw-font-size-5 tw-nowrap'</span><span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">.</span>offsetHeight <span class="token operator">+</span> <span class="token string">'px'</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre>
+</div>
+		<p><b>0.0.3 (2019/10/07) 버전</b> 추가된 소스(자동실행)이며 twitch 스트리밍 시청중 이 코드를 실행시 UI오류가 수정됨 (한국어 에서만 발생하는 트위치 오류)</p>
 		</div>
 		<div style="margin-top: 50px;">
 			<img src="ko-kr.png">
