@@ -24,22 +24,23 @@
 		    margin-top: -100px;
 		    margin-left: -100px;
 		}
-.token.keyword {
-    color: #66d9ef;
-}.token.punctuation {
-    color: #f8f8f2;
-}.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
-    color: #a6e22e;
-}.token.boolean, .token.number {
-    color: #ae81ff;
-}.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string, .token.variable {
-    color: #ef2424;
-}pre[class*="language-"] {
-    padding: 1em;
-    margin: .5em 0;
-    overflow: auto;
-    border-radius: 0.3em;
-}
+		.token.keyword {
+		    color: #66d9ef;
+		}.token.punctuation {
+		    color: #f8f8f2;
+		}.token.selector, .token.attr-name, .token.string, .token.char, .token.builtin, .token.inserted {
+		    color: #a6e22e;
+		}.token.boolean, .token.number {
+		    color: #ae81ff;
+		}.token.operator, .token.entity, .token.url, .language-css .token.string, .style .token.string, .token.variable {
+		    color: #ef2424;
+		}pre[class*="language-"] {
+		    padding: 1em;
+		    margin: .5em 0;
+		    overflow: auto;
+		    border-radius: 0.3em;
+		}
+		h4,h5{font-weight: lighter;}
 	</style>
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/xeicon@2.3.3/xeicon.min.css">
 </head>
@@ -73,10 +74,11 @@
 				<h3>4. <b>KT 버퍼 해결(Pro 버전 : 크롬)</b> : 서버를 자동으로 한국서버로 잡아줍니다.</h3>
 				<h4>Q. VPN으로도 한국서버 설정이 가능한데 차이가 뭔가요?</h4>
 				<h5>A. VPN은 VPN서버의 속도에 영향을 받습니다.</h5>
-				<h5>트위치서버 <-> VPN서버 <-> 사용자</h5>
-				<h5>또 vpn을 사용해도 Slow Server에 걸릴수있습니다. (사용한 의미가 없을수있음)</h5><br>
-				<h5>그러나 이 프로그램은 사용자의 환경에서 트위치 서버와 직접적으로 연결을 해주기 때문에 기존 스트리밍과 동일하게 처리됩니다.</h5>
-				<h5>트위치서버 <-> 사용자 ( 지연시간의 감소 )</h5>
+				<h5>* 트위치서버 <-> VPN서버 <-> 사용자 ( vpn의 속도에 영향 )</h5>
+				<h5>또 vpn을 사용해도 Slow Server에 걸릴수있습니다. (사용한 의미가 없을수있음)</h5>
+				<h5>* 트위치서버(slow) <-> VPN서버 <-> 사용자 ( 버퍼 )</h5><br>
+				<h5>반면에 Pro버전은 사용자의 환경에서 트위치 서버와 직접적으로 연결을 해주기 때문에 기존 스트리밍과 동일하게 처리됩니다.</h5>
+				<h5>* 트위치서버 <-> 사용자 ( 지연시간의 감소 )</h5>
 				<br><br>
 				<h4>Q. 다른통신사도 이용이 가능한가요?</h4>
 				<h5>A. 현재는 <a href="https://chrome.google.com/webstore/detail/twitch-server-checker/bohhpcaljnggabklkeanncbebknjpcod?utm_source=chrome-ntp-icon" target="_blank">무료프로그램</a>에서 위치가 Slow Server 로 뜨는경우에만 이용가능합니다.</h5>
