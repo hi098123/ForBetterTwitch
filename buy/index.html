@@ -106,20 +106,18 @@
 		            	var tmp=arr[i].split("=");
 		            	DataARR[tmp[0]]=tmp[1];
 		            }
-		            //DataARR[arr]
-		            //console.log(DataARR['ts']);
 		            var date = new Date(DataARR['ts']*1000);
 					// Hours part from the timestamp
 					var hours = date.getHours();
 					// Minutes part from the timestamp
-					var endDate   = new Date("04/09/2013 23:30:00");
+					var endDate   = new Date("04/09/2013 23:50:00");
 					var timeGap = new Date(0, 0, 0, 0, 0, 0, date-endDate);
 					var diffHour = timeGap.getHours();
 					var diffMin  = timeGap.getMinutes();
-					if(diffHour==0 && diffMin<35){
+					if(diffHour==0 && diffMin<15){
 						//페이지 이용 불가표시
 		            	console.log("지원 가능시간이 아닙니다.");
-		            	DGEID("main").innerHTML="<h2>은행점검시간 등의 이유로 이용 가능시간이 아닙니다.</h2><h2>매일 23:30 ~ 00:05 에는 이용하실 수 없습니다.</h2>";
+		            	DGEID("main").innerHTML="<h2>은행점검시간 등의 이유로 이용 가능시간이 아닙니다.</h2><h2>매일 23:50 ~ 00:05 에는 이용하실 수 없습니다.</h2>";
 					}
 		        }
 		    }
